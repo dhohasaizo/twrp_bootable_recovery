@@ -653,14 +653,18 @@ int GUIAction::copylog(std::string arg __unused)
 	if (!simulate)
 	{
 		string dst, curr_storage;
+		int copy_logcat_log = 0;
 		int copy_kernel_log = 0;
 
+		DataManager::GetValue("tw_include_logcat_log", copy_logcat_log);
 		DataManager::GetValue("tw_include_kernel_log", copy_kernel_log);
 		PartitionManager.Mount_Current_Storage(true);
 		curr_storage = DataManager::GetCurrentStoragePath();
 		dst = curr_storage + "/recovery.log";
 		TWFunc::copy_file("/tmp/recovery.log", dst.c_str(), 0755);
 		tw_set_default_metadata(dst.c_str());
+		if (copy_logcat_log)
+			TWFunc::copy_logcat_log(curr_storage);
 		if (copy_kernel_log)
 			TWFunc::copy_kernel_log(curr_storage);
 		sync();

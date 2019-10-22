@@ -101,6 +101,7 @@ public:
 	static void SetPerformanceMode(bool mode); // support recovery.perf.mode
 	static void Disable_Stock_Recovery_Replace(); // Disable stock ROMs from replacing TWRP with stock recovery
 	static unsigned long long IOCTL_Get_Block_Size(const char* block_device);
+	static void copy_logcat_log(string curr_storage); // Copy Logcat Log to Current Storage (PSTORE/KMSG)
 	static void copy_kernel_log(string curr_storage); // Copy Kernel Log to Current Storage (PSTORE/KMSG)
 	static bool isNumber(string strtocheck); // return true if number, false if not a number
 	static int stream_adb_backup(string &Restore_Name); // Tell ADB Backup to Stream to TWRP from GUI selection
