@@ -435,6 +435,9 @@
 				<listitem name="{@use_rmrf_chk=Use rm -rf instead of formatting}">
 					<data variable="tw_rm_rf"/>
 				</listitem>
+				<listitem name="{@enable_backup_comp_chk=Enable compression}">
+					<data variable="tw_use_compression"/>
+				</listitem>
 				<listitem name="{@disable_backup_space_chk=Disable free space check before backup}">
 					<data variable="tw_disable_free_space"/>
 				</listitem>
